@@ -2,12 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*9. Escriba un programa que escriba la tabla de multiplicar del 1, 2,....,9.
+/*5. Generar un bucle infinito.
 */
 
 void main()
 {
-    
+    int i;
+    for (i = 1; i <= 4; i--)
+    {
+        printf("Hola, soy un mensaje infinito D:\n");
+    }
+
     
   system("pause");
 }
