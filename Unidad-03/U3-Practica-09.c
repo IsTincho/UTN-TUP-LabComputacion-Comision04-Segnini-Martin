@@ -7,7 +7,18 @@
 
 void main()
 {
+    int i,num,l;
     
+      for (i = 1; i < 10; i++)
+      {
+          printf("****** TABLA DEL: %i ******\n", i);
+        for (l = 1; l <= 10; l++)
+        {
+          num=l;
+          printf("%i x %i = %i\n", i, l, num*i);
+        } 
+        printf("\n");
+      }  
     
   system("pause");
 }
