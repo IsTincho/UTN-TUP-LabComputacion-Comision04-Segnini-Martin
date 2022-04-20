@@ -5,7 +5,7 @@
 /*2. Imprimir los números del 1 al 10 uno abajo del otro saltando de a dos.
 */
 
-void main()
+/*void main()
 {
     int i, num;
     num=1;
@@ -16,6 +16,19 @@ void main()
         num=num+2;
     }
     
+    
+  system("pause");
+}
+*/
+void main()
+{
+    int i;
+
+    for (i=1; i <= 10; i+=2)
+    {
+        printf("%i\n", i);
+      
+    }
     
   system("pause");
 }
