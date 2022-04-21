@@ -14,8 +14,17 @@ visualice la siguiente salida:
 
 void main()
 {
-    
-    
+    int n, i, j;
+
+    printf("Ingrese un numero entero no negativo\n");
+    scanf("%i", &n);
+
+    if(n>0){
+
+      //
+
+    }
+
   system("pause");
 }
 

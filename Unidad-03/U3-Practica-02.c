@@ -5,21 +5,6 @@
 /*2. Imprimir los números del 1 al 10 uno abajo del otro saltando de a dos.
 */
 
-/*void main()
-{
-    int i, num;
-    num=1;
-
-    for (i=1; i <= 5; i++)
-    {
-        printf("%i\n", num);
-        num=num+2;
-    }
-    
-    
-  system("pause");
-}
-*/
 void main()
 {
     int i;

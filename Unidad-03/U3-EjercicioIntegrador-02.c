@@ -24,115 +24,198 @@ Al finalizar el registro, mostrar la suma total de las ventas ingresadas.
 
 void main()
 {
-    
-    int cVentas, dni, mVenta, mPago, tTarjeta, cCuotas, resumen;
-    int i, cuotas, total;
+    int cVentas, dni, mPago, tTarjeta, cCuotas, cuotas;
+    float total, tVentas, venta;
+    int i;
 
-    printf("Por favor, para comenzar, ingrese la cantidad de ventas a registrar.\n");
-    printf("Tenga en cuenta que en caso de ingresar un n%cmero menor a 1 finalizar%c el programa.\n",163, 160);
+    total=0;
+    tVentas=0;
+    venta=0;
+
+    printf("Ingrese la cantidad de ventas a ingresar.\n");
     scanf("%i", &cVentas);
 
-    if (cVentas>=1)
-    {
-        printf("Comencemos a cargar las %i ventas.\n", cVentas);
-        for (i = 1; i <=cVentas; i++)
-        {
-            printf("Datos de la operaci%cn: %i\n",162, i);
-            printf("Ingrese el DNI del comprador: \n");
-            scanf("%i",&dni);
+    if(cVentas>0){
 
-           if(dni>1000000 && dni<99999999){
-                printf("El DNI: %i es correcto. Sigamos...\n", dni);
-        //************MEDIOS DE PAGO**************
-                printf("Seleccione su metodo de pago: 1 para EFECTIVO, 2 para TARJETA\n");
-                scanf("%i", &mPago);
-                switch (mPago)
-                {
-                case 1:
-                    printf("Ha seleccionado EFECTIVO\n");
-                    break;
-                 case 2:
-                    printf("Ha seleccionado Tarjeta de Credito\n");
-                    printf("Ingrese el tipo de Tarjeta: 1-Visa, 2-American Express, 3-Mercado Pago, 4-Cabal\n");
-                    printf("En caso de elegir una opcion el programa se cerrara\n");
-                    scanf("%i", &tTarjeta);
-            //****************** TIPO DE TARJETA ************************
-                switch (tTarjeta)
-                {
-                case 1:
-                    printf("VISA\n");
-                break;
-                case 2:
-                    printf("American Express\n");
-                break;
-                case 3:
-                    printf("Mercado Pago\n");
-                break;
-                case 4:
-                    printf("Cabal\n");
-                break;
-            
-                default:
-                    printf("Ha ingresado una tarjeta invalida.\n");
-                break;
-                }
-                break;
-        
-                default:
-                printf("Error, ha seleccionado una opcion invalida...\n");
-                printf("Cerrando programa...\n");
-                break;
-                }
-        //************* Calculo de Intereses **************
-        if(mPago==2){
-            printf("Desea pagar en cuotas?\n");
-            printf("Ingresar '1' para SI y cualquier otra cosa para NO\n");
-            scanf("%i", &cuotas);
-        if(cuotas==1){
-            printf("Contamos con 3, 6  o 12 cuotas.\n");
-            printf("Para 3 cuotas se aplicara un interes del 4%\n");
-            printf("Para 6 y 12 cuotas el interes sera de 8%\n");
-            printf("Por favor, presione ''1'' para 3 Cuotas, ''2'' para 6 cuotas y ''3'' para 12 cuotas. De lo ''contrario'' se realizara un pago unico.\n");
-            scanf("%i", &cCuotas);
-            switch (cCuotas)
+        printf("Vamos a cargar las %i ventas.\n", cVentas);
+      for (i = 1; i <= cVentas; i++)
+      {
+        printf("Cargue el DNI de la venta n%cmero: %i.\n", 163, i);
+        printf("Recuerde que si el DNI es inv%clido, la carga se anular%c.\n",160,160);
+        scanf("%i",&dni);
+        if (dni>1000000 && dni<99999999)
+        {
+//Monto de la venta
+          printf("DNI validado. Ahora ingrese el monto de la venta...\n");
+          scanf("%f", &venta);
+//Calculo de medio de pago y coutas
+          printf("Ahora, ingrese el medio de pago con el siguiente men%c\n",163);
+          printf("Presione 1 para EFECTIVO\n");
+          printf("Presione 2 para TARJETA\n");
+          scanf("%i", &mPago);
+          switch (mPago)
+          {
+          case 1:
+//Calculo con Efectivo          
+            printf("Ha seleccionado EFECTIVO...\n");
+            total=venta;
+            printf("Procesando...\n");
+            printf("************************\n");
+            printf("DNI: %i\n",dni);
+            printf("Medio de pago: Efectivo\n");
+            printf("Cuotas: 1\n");
+            printf("Total: $%.2f\n", total);
+            break;
+          case 2:
+//Calculo con Tarjeta
+            printf("Ha seleccionado TARJETA...\n");
+            printf("Ingrese el tipo de tarjeta segun el siguiente men%c...\n",163);
+//TIPOS DE TARJETA+Switch
+            printf("1 para Visa\n");
+            printf("2 para American Express\n");
+            printf("3 para Mercado Pago\n");
+            printf("4 para Cabal\n");
+            printf("De lo contrario se invalidara la venta....\n");
+            scanf("%i", &tTarjeta);
+            switch (tTarjeta)
             {
             case 1:
-                printf("Usted ha seleccionado pagar $4600 en 3 cuotas.\n");
-                cCuotas=3;
-                total=4600*1.04;
-                break;
-            
+              printf("Ha seleccionado la tarjeta de tipo Visa\n");
+              break;
             case 2:
-                printf("Usted ha seleccionado pagar $4600 en 6 cuotas.\n");
-                cCuotas=6;
-                total=4600*1.08;
-                break;
-            
+              printf("Ha seleccionado la tarjeta de tipo American Express\n");
+              break;
             case 3:
-                printf("Usted ha seleccionado pagar $4600 en 12 cuotas.\n");
-                cCuotas=12;
-                total=4600*1.08;
-                break;
+              printf("Ha seleccionado la tarjeta de tipo Mercado Pago\n");
+              break;
+            case 4:
+              printf("Ha seleccionado la tarjeta de tipo Cabal\n");
+              break;
             
             default:
-                cCuotas=1;
-                total=4600;
-                break;
+              printf("Error.... Venta anulada.\n");
+              break;
             }
-        }
+//Calcular cuotas+intereses
+            if(tTarjeta>=1&&tTarjeta<=4){
+              printf("Desea pagar en cuotas? Ingrese 1 para SI.\n");
+              printf("Cualquier otro valor se tomara como pago unico.\n");
+              scanf("%i",&cuotas);
+              if (cuotas==1)
+              {
+//INTERESES
+                printf("Ingrese 1 para pagar en 3 cuotas\n");
+                printf("Ingrese 2 para pagar en 6 cuotas\n");
+                printf("Ingrese 3 para pagar en 12 cuotas\n");
+                scanf("%i", &cCuotas);
+                switch (cCuotas)
+                {
+                case 1:
+                  total=venta*1.04;
+                  break;
+                
+                case 2:
+                  total=venta*1.08;
+                  break;
+                
+                case 3:
+                  total=venta*1.08;
+                  break;
+                
+                default:
+                  printf("Venta anulada...\n");
+                  break;
+                }
+                printf("Procesando...\n");
+                printf("************************\n");
+                printf("DNI: %i\n",dni);
+//Tipo de tarjeta en X cuotas
+              switch (tTarjeta)
+            {
+            case 1:
+              printf("Medio de pago: Tarjeta Visa\n");
+              break;
+            case 2:
+              printf("Medio de pago: Tarjeta American Express\n");
+              break;
+            case 3:
+              printf("Medio de pago: Tarjeta Mercado Pago\n");
+              break;
+            case 4:
+             printf("Medio de pago: Tarjeta Cabal\n");
+              break;
+            default:
+              break;
+            }
+                switch (cCuotas)
+                {
+                case 1:
+                  printf("Cuotas: 3\n");
+                  break;
+                
+                case 2:
+                  printf("Cuotas: 6\n");
+                  break;
+                
+                case 3:
+                  printf("Cuotas: 12\n");
+                  break;
+                default:
+                  break;
+                }
+                printf("Total: $%.2f\n", total);
+//FINALIZACION DE RESUMEN
+              }else{
+                printf("Procesando...\n");
+                printf("************************\n");
+                printf("DNI: %i\n",dni);
+//Tipo de tarjeta en 1 cuota                
+              switch (tTarjeta)
+            {
+            case 1:
+              printf("Medio de pago: Tarjeta Visa\n");
+              break;
+            case 2:
+              printf("Medio de pago: Tarjeta American Express\n");
+              break;
+            case 3:
+              printf("Medio de pago: Tarjeta  Mercado Pago\n");
+              break;
+            case 4:
+             printf("Medio de pago: Tarjeta Cabal\n");
+              break;
+            default:
+              break;
+            }
+                total=venta;
+                printf("Cuotas: 1\n");
+                printf("Total: $%.2f", total);
+                printf("\n");
+              }
+              
+            }
+            break;
+          default:
+            printf("Ha ingresado un medio de pago incorrecto... Venta anulada.\n");
+            break;
+          }
+        
         }else{
-            cCuotas=1;
-            total=4600;
+          printf("El DNI ingresado no es v%clido\n", 160);
+          printf("Carga de la venta nro: %i anulada. Siguiente...\n");
         }
-        }
-
-        }
+        tVentas=tVentas+total;
+      }
+//Good ending
+      printf("***************************\n");
+      printf("El d%ca de hoy se han registrado un total de $%.2f en ventas.\n",161, tVentas);
+      
     }else{
-        printf("***ERROR**\n");
-        printf("Ha ingresado %i ventas. Lo que es un valor inv%clido", mVenta, 160);
+//Bad ending
+      printf("Cerrando programa....\n");
     }
-    
-    
+
+
   system("pause");
 }
 

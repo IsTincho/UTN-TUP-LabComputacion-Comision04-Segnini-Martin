@@ -9,6 +9,32 @@ Mostrar el promedio por alumno y el promedio general.
 void main()
 {
     int cAlumnos, promA, promG, nota;
+    int i, j;
+
+    cAlumnos=5;
+    promA=0;
+    promG=0;
+
+    for (i = 1; i <= 5; i++)
+    {
+        promA=0;
+        printf("***** ALUMNO NRO %i *****\n", i);
+
+      for ( j = 1; j <= 3; j++)
+      {
+    
+          printf("Ingrese la nota nro %i del alumno %i: \n", j, i);
+          scanf("%i", &nota);
+          promA=promA+nota;
+              
+      }
+        promA=promA/3;
+        printf("Promedio del Alumno nro %i es de: %i \n", i, promA);
+        promG=promG+promA;
+    }
+    
+    promG=promG/cAlumnos;
+    printf("El promedio general es: %i \n", promG);
     
   system("pause");
 }
