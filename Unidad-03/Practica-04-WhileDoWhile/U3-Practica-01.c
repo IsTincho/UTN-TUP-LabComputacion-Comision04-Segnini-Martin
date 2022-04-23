@@ -2,11 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
+/*1. Imprimir en la consola los números del 1 al 100.
 */
 
 void main()
 {
+    int n=1;
+    while (n<=100)
+    {
+      printf("%i ", n);
+      n+=1;
+    }
     
     
   system("pause");

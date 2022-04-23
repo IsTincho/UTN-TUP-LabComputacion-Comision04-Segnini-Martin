@@ -2,11 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
+/*2. Generar un bucle while infinito.
 */
 
 void main()
 {
+    int i=1;
+    while (i>0)
+    {
+        printf("Soy un bucle infinito :D \n");
+    }
     
     
   system("pause");

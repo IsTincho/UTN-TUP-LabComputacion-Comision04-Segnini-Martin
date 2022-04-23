@@ -21,8 +21,15 @@ void main()
 
     if(n>0){
 
-      //
-
+     for (i = n; i >= 1; i--)
+     {
+       for (j = 1; j <= i; j++)
+       {
+        printf("%i ",j);
+       }
+       
+       printf("\n");
+     }
     }
 
   system("pause");
