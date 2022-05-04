@@ -15,7 +15,7 @@ void main()
     promA=0;
     promG=0;
 
-    for (i = 1; i <= 5; i++)
+    for (i = 1; i <= cAlumnos; i++)
     {
         promA=0;
         printf("***** ALUMNO NRO %i *****\n", i);

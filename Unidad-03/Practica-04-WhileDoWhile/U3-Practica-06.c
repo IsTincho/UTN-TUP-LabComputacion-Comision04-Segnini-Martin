@@ -8,38 +8,39 @@
 void main()
 {
     
-    float nota=0;
-    float sum=0;
-    float prom=0;
-    int pre;
-    bool rep=true;
+    float nota, suma, promedio;
+    int basta = 0;
+    int can=0;
 
-    printf("Desea comenzar a cargar notas?\n");
-    printf("Ingrese 1 para comenzar. De lo contrario el programa finalizara.\n");
-    scanf("%i", &pre);
-    if(pre==1){
-        do
+    suma=0;
+    promedio=0;
+
+    do
+    {
+        printf("Ingrese la nota numero %i.\n", can+1);
+        scanf("%f", &nota);
+        can+=1;
+        suma=suma+nota;
+
+        printf("Desea ingresar mas notas?\n");
+        printf("Ingresar 1 para SI, 0 para NO\n");
+        scanf("%i", &basta);
+        while (basta>1 || basta<0)
         {
-            scanf("%.2f", &nota);
-            sum=sum+nota;
-            prom+=1;
-            printf("Desea cargar otra nota?\n");
-            printf("Ingrese 1 para si, 2 para no.\n");
-            scanf("%i", pre);
-            if(pre==1)
-            {
-                rep=true;
-            }else{
-                rep=false;
-            }
-            
-        } while (rep=false);
-    }else{
-        printf("Cerrando programa...\n");
-    }
+            printf("ERROR, ingrese 1 o 0\n");
+            scanf("%i", &basta);
+        }
+        
+        if (basta==0)
+        {
+            promedio=suma/can;
+            printf("El promedio es: %.2f\n", promedio);
+        }
+        
 
-
+    } while (basta==1);
     
+
   system("pause");
 }
 

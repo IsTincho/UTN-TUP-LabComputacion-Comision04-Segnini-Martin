@@ -16,7 +16,7 @@ Trabajar con las siguientes variables:
  int ingresaCorrectamente = 0; 
 */
 
-void main()
+int main()
 {
     int dni = 38632584;
     int dniIngresado = 0;
@@ -25,28 +25,31 @@ void main()
     
     float nota = 7;
 
-    printf("Ingrese el dni del alumno.\n");
-    scanf("%i", &dniIngresado);
-    
     do
     {
+        printf("Ingrese el DNI del alumno.\n");
+        scanf("%i", &dniIngresado);
+        
         if (dniIngresado!=dni)
         {
-            printf("Error, intente nuevamente\n");
-            printf("Le quedan %i intentos\n", 3-intentos);
             intentos+=1;
-            scanf("%i", &dniIngresado);
+            printf("**ERROR** Te quedan: %i intentos\n", 4-intentos);
+            if(intentos<=3){
+                printf("Vuelve a intentarlo.\n");
+            }else{
+                printf("Se han terminado sus intentos...\n");
+                printf("Cerrando programa.\n");
+            }
         }else{
-            printf("%i.\n", ingresaCorrectamente);
             ingresaCorrectamente=1;
+            printf("La nota del alumno es: %.2f\n", nota);
         }
         
-    } while (intentos<=3 && dniIngresado!=dni);
+
+    } while (ingresaCorrectamente==0 && intentos<=3);
     
-    if(ingresaCorrectamente==1 || intentos<3){
-        printf("Nota: %.2f", nota);
-    }
 }
+
 
 /*
 

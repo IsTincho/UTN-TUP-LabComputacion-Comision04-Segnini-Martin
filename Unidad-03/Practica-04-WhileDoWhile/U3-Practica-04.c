@@ -14,8 +14,13 @@ calculando y por último, el promedio general del curso.
 void main()
 {
     int i,j;
-    float promG, promA, nota;
+    float promG, promA, nota, notaA, notaG;
     int cAlum, cParciales;
+
+    promA=0;
+    promG=0;
+    notaA=0;
+
 //Cantidad Alumnos
     printf("Ingrese la cantidad de alumnos en el Curso: \n");
     scanf("%i", &cAlum);
@@ -38,16 +43,32 @@ void main()
     
 //Cargar notas para cada alumno
 
-    for (i = 1; i <= cParciales; i++)
+    for (i = 1; i <= cAlum; i++)
     {
-        for (j = 1; j <= cAlum; j++)
+        for (j = 1; j <= cParciales; j++)
         {
+            do
+            {
             printf("Ingrese la nota del alumno %i para el parcial %i\n", j, i);
             scanf("%f", &nota);
+            
+            if ((nota>10)||(nota<0))
+            {
+                printf("ERROR, vuelva a intentarlo\n");
+            }
+            
+            } while ((nota>10) || (nota<0));
+            notaA=notaA+nota;
         }
-        
+        promA=notaA/cParciales;
+        printf("El promedio del alumno %i es de: %.2f\n", i, promA);
+        notaG=notaG+promA;
+        promA=0;
+        notaA=0;
     }
     
+    promG=notaG/cAlum;
+    printf("El promedio general de la clase es de: %.2f\n", promG);
 
   system("pause");
 }
