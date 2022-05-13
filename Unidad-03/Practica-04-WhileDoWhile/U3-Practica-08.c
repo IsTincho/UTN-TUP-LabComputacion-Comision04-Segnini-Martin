@@ -26,85 +26,90 @@ void main()
   //VENDEDOR A
 
     printf("Vamos a ingresar las ventas del vendedor A, para pasar al siguiente ingresar 0\n");
-    while (venA!=0)
+    do 
     {
-      while (venA>0)
+      scanf("%f", &venA);
+      while (venA<0)
       {
+        printf("Error, ingrese un valor valido.\n");  
         scanf("%f", &venA);
-        sumA=sumA+venA;
       }
-      
-    }
+      sumA=sumA+venA;
+    }while (venA!=0);
 
     printf("Total $%.2f\n", sumA);
 
   //VENDEDOR B  
 
       printf("Vamos a ingresar las ventas del vendedor B, para pasar al siguiente ingresar 0\n");
-    while (venB!=0)
+    do 
     {
-      while (venB>0)
+      scanf("%f", &venB);
+      while (venB<0)
       {
+        printf("Error, ingrese un valor valido.\n"); 
         scanf("%f", &venB);
-        sumB=sumB+venB;
       }
-      
-    }
+      sumB=sumB+venB;
+    }while (venB!=0);
 
     printf("Total $%.2f\n", sumB);
 
   //VENDEDOR C  
     printf("Vamos a ingresar las ventas del vendedor C, para pasar al siguiente ingresar 0\n");
-    while (venC!=0)
+    do 
     {
-      while (venC>0)
-      {
+      scanf("%f", &venC);
+      while (venC<0)
+      {  
+        printf("Error, ingrese un valor valido.\n");
         scanf("%f", &venC);
-        sumC=sumC+venC;
       }
-      
-    }
+      sumC=sumC+venC;
+    }while (venC!=0);
 
     printf("Total $%.2f\n", sumC);
   
   //VENDEDOR D
     printf("Vamos a ingresar las ventas del vendedor D, para pasar al siguiente ingresar 0\n");
-    while (venD!=0)
+    do
     {
-      while (venD>0)
+      scanf("%f", &venD);
+      while (venD<0)
       {
+        printf("Error, ingrese un valor valido.\n");
         scanf("%f", &venD);
-        sumD=sumD+venD;
       }
-      
-    }
+      sumD=sumD+venD;
+    }while (venD!=0);
 
     printf("Total $%.2f\n", sumD);
 
   //VENDEDOR E
     printf("Vamos a ingresar las ventas del vendedor E, para pasar al siguiente ingresar 0\n");
-    while (venE!=0)
+    do 
     {
-      while (venE>0)
+      scanf("%f", &venE);
+      while (venE<0)
       {
+        printf("Error, ingrese un valor valido.\n"); 
         scanf("%f", &venE);
-        sumE=sumE+venE;
       }
-      
-    }
+      sumE=sumE+venE;  
+    }while (venE!=0);
 
     printf("Total $%.2f\n", sumE);
 
     printf("***RESUMEN FINAL***\n");
-    printf("El vendedor A se lleva una comision de: $%.2f\n",sumA*1.025);
+    printf("El vendedor A se lleva una comision de: $%.2f\n",sumA*.025);
   
-    printf("El vendedor B se lleva una comision de: $%.2f\n",sumB*1.025);
+    printf("El vendedor B se lleva una comision de: $%.2f\n",sumB*.025);
   
-    printf("El vendedor C se lleva una comision de: $%.2f\n", sumC*1.025);
+    printf("El vendedor C se lleva una comision de: $%.2f\n", sumC*.025);
   
-    printf("El vendedor D se lleva una comision de: $%.2f\n", sumD*1.025);
+    printf("El vendedor D se lleva una comision de: $%.2f\n", sumD*.025);
 
-    printf("El vendedor E se lleva una comision de: $%.2f\n", sumE*1.025);
+    printf("El vendedor E se lleva una comision de: $%.2f\n", sumE*.025);
     
   system("pause");
 }
