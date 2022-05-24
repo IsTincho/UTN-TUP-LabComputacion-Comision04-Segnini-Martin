@@ -59,19 +59,20 @@ void main()
       printf("Ha ingresado correctamente.\n");
       printf("Desea consultar SALDO, CBU o SALIR?\n Presione 1 para SALDO\n Presione 2 para CBU \n Cualquier otro valor para SALIR\n");
       
-      scanf("%i", &menu);
-      switch (menu)
-      {
-      case 1:
-        printf("Su saldo es: $%i.\n", saldo);
-        break;
-      case 2:
-        printf("Su CBU es: %i.\n", cbu);
-      default:
-        printf("Saliendo del programa...\n");
-        break;
-      }
-
+      do{
+       scanf("%i", &menu);
+       switch (menu)
+       {
+       case 1:
+         printf("Su saldo es: $%i.\n", saldo);
+         break;
+       case 2:
+         printf("Su CBU es: %i.\n", cbu);
+       default:
+         printf("Saliendo del programa...\n");
+         break;
+        }
+      }while(menu!=3);
     }else{
       printf("Se han excedido el limite de intentos...\n");
       printf("Cerrando programa\n");

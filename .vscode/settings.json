@@ -1,5 +1,8 @@
 {
     "editor.defaultFormatter": "formulahendry.code-runner",
     "workbench.colorTheme": "Default Dark+",
-    "workbench.preferredDarkColorTheme": "Visual Studio Dark"
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "files.associations": {
+        "limits": "c"
+    }
 }
