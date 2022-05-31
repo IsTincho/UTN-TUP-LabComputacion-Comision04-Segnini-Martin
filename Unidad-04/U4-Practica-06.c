@@ -23,11 +23,11 @@ void main()
         
         if (facturacion[i] > mayor){
             
-            mayor = facturacion[i];
+          mayor = facturacion[i];
 
         }else if (facturacion[i] < menor){
-            
-            menor = facturacion[i];
+             
+          menor = facturacion[i];
         
         }
         tot=tot+facturacion[i];
