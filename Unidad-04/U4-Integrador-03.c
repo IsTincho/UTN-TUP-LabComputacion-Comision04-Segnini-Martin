@@ -91,6 +91,7 @@ void main()
         } while (encontrado==false);
 
         printf("La nota del alumno DNI: %f es de: %.2f puntos.", lista[0][posDNI], lista[1][posDNI]);
+        encontrado=false;
         break;
     case 3:
         /* code */
